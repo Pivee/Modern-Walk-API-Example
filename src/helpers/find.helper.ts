@@ -26,7 +26,9 @@ export class InvalidKeyValuePair extends Error {
   }
 }
 
-export default function find<T extends IModel, K>(options: IFindOptions<T, K>) {
+export default function find<T extends IModel, K = any>(
+  options: IFindOptions<T, K>
+) {
   const { dataset, key, value } = options;
 
   if (!dataset) throw new InvalidDatasetError();
