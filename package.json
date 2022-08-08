@@ -4,10 +4,11 @@
   "description": "This app aims to replicate the functionality of the mock REST API created for the Modern Walk app created during the Frontend Training program.",
   "main": "./dist/main.js",
   "scripts": {
-    "build": "tsc",
+    "prebuild": "rimraf ./dist",
+    "build": "npm run prebuild && tsc",
     "start": "ts-node ./src/main.ts",
     "start:prod": "node ./dist/main.js",
-    "start:dev": "nodemon ./dist/main.js"
+    "start:dev": "npm run build && nodemon ./dist/main.js"
   },
   "repository": {
     "type": "git",
