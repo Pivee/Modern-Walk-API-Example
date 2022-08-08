@@ -4,7 +4,7 @@ interface IModel {
 
 interface IFindOptions<T extends IModel, K> {
   dataset: T[];
-  key?: string;
+  key?: keyof T;
   value?: K;
 }
 
