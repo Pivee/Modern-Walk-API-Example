@@ -6,13 +6,13 @@ import usersRouter from "./routes/users.router";
 
 const app = express();
 
-app.get("/", (req: Request, res: Response) => {
+app.get("/api/hello", (req: Request, res: Response) => {
   res.send("Hello World");
 });
 
-app.use("/categories", categoriesRouter);
-app.use("/products", productsRouter);
-app.use("/tenants", tenantsRouter);
-app.use("/users", usersRouter);
+app.use("/api/v1/categories", categoriesRouter);
+app.use("/api/v1/products", productsRouter);
+app.use("/api/v1/tenants", tenantsRouter);
+app.use("/api/v1/users", usersRouter);
 
 export default app;
