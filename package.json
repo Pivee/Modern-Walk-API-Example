@@ -4,7 +4,8 @@
   "description": "This app aims to replicate the functionality of the mock REST API created for the Modern Walk app created during the Frontend Training program.",
   "main": "./dist/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./dist/main.js",
+    "dev": "nodemon ./dist/main.js"
   },
   "repository": {
     "type": "git",
