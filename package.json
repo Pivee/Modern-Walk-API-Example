@@ -2,7 +2,7 @@
   "name": "moden-walk-api",
   "version": "1.0.0",
   "description": "This app aims to replicate the functionality of the mock REST API created for the Modern Walk app created during the Frontend Training program.",
-  "main": "main.js",
+  "main": "./dist/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/Pivee/Modern-Walk-API-Example/issues"
   },
-  "homepage": "https://github.com/Pivee/Modern-Walk-API-Example#readme"
+  "homepage": "https://github.com/Pivee/Modern-Walk-API-Example#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
 }
