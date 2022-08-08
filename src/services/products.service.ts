@@ -2,11 +2,21 @@ import find from "../helpers/find.helper";
 import { IProduct } from "../interfaces/IProduct";
 
 export class ProductsService {
-  getAllProducts(products: IProduct[]) {
-    return find({ dataset: products });
+  datasource: IProduct[];
+
+  constructor(datasource: IProduct[]) {
+    this.datasource = datasource;
   }
 
-  getProductById(products: IProduct[], id: string) {
-    return find<IProduct, number>({ dataset: products, key: "id", value: +id });
+  getAllProducts() {
+    return find<IProduct>({ dataset: this.datasource });
+  }
+
+  getProductById(id: string) {
+    return find<IProduct, number>({
+      dataset: this.datasource,
+      key: "id",
+      value: +id,
+    });
   }
 }
