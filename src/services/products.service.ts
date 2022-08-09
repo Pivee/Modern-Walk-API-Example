@@ -8,7 +8,7 @@ export class ProductsService {
     this.datasource = datasource;
   }
 
-  getAllProducts() {
+  getAllProducts(): IProduct[] {
     return find<IProduct>({ dataset: this.datasource });
   }
 
