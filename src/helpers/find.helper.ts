@@ -17,7 +17,7 @@ export class InvalidDatasetError extends Error {
   }
 }
 
-export class InvalidKeyValuePair extends Error {
+export class InvalidKeyValuePairError extends Error {
   message = "Key of specified value is undefined";
 
   constructor() {
@@ -34,7 +34,7 @@ export default function find<T extends IModel, K = any>(
   if (!dataset) throw new InvalidDatasetError();
   if (!value) return dataset;
 
-  if (!key && value) throw new InvalidKeyValuePair();
+  if (!key && value) throw new InvalidKeyValuePairError();
   if (key && value) return dataset.filter((datum: T) => datum[key] === value);
 
   return [];

@@ -1,4 +1,4 @@
-import find, { InvalidDatasetError, InvalidKeyValuePair } from "./find.helper";
+import find, { InvalidDatasetError, InvalidKeyValuePairError } from "./find.helper";
 
 describe("Helper fn(): find", () => {
   describe("Empty dataset", () => {
@@ -59,7 +59,7 @@ describe("Helper fn(): find", () => {
       try {
         result = find({ dataset: mockDataset, value: "Dog" });
       } catch (error) {
-        expect(error).toBeInstanceOf(InvalidKeyValuePair);
+        expect(error).toBeInstanceOf(InvalidKeyValuePairError);
       }
 
       expect(result).toBeUndefined();
